@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Pedro Jonas</title>
+</head>
+<body>
+    <audio id="audio" src="song/pedro-pedro.mp3" preload="auto"></audio>
+
+        <div id="playArea" style="display: flex; justify-content: center; align-items: center;">
+            <button id="playButton">picale aki</button>
+        </div>
+
+    <div class="spinner hidden" >
+        <img src="img/Jonas.png" alt="Pedro-Jonas">
+    </div>
+
+    <script>
+        const audio = document.getElementById('audio');
+        const playButton = document.getElementById('playButton');
+        const spinner = document.querySelector('.spinner');
+
+        // Función para reproducir el audio
+        const playAudio = () => {
+            audio.play().catch(error => {
+                console.error('Error al intentar reproducir el audio:', error);
+            });
+        };
+
+        // Escuchar el evento de clic en el botón
+        playButton.addEventListener('click', () => {
+            playAudio();
+            playButton.style.display = 'none';
+            spinner.classList.remove('hidden');
+        });
+    </script>  
+</body>
+</html>

@@ -1,0 +1,49 @@
+body {
+    background: #161616;
+    margin: 0;
+
+    height: 100dvh;
+    display: grid;
+    place-content: center center;
+}
+
+.hidden {
+    display: none;
+}
+
+.spinner {
+    background: #f5dad8;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 200px;
+    aspect-ratio: 1;
+    
+    animation: rotacion 2s linear infinite;
+}
+
+img {
+    display: block;
+    width: 100%;
+
+    animation: rebote .2s linear infinite alternate;
+}
+
+@keyframes rotacion {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes rebote {
+    from {
+        transform: translateY(-10%);
+    }
+
+    to {
+        transform: translateY(10%);
+    }
+}
